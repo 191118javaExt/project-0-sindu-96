@@ -12,4 +12,5 @@ public interface AccountDAO {
 	public boolean approve(int a_id);
 	public boolean withdraw(int a_id, double amount);
 	public boolean deposit(int a_id, double amount);
+	public boolean transfer(int a_id, int a_id2, double amount);
 }

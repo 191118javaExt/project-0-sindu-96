@@ -30,3 +30,5 @@ java.sql.SQLException: No suitable driver found for jdbc:postgresql://localhost:
 2019-12-17 22:56:16 INFO  MyLogger:161 - Balance updated
 2019-12-17 22:57:10 INFO  MyLogger:143 - Balance updated
 2019-12-17 22:59:15 WARN  MyLogger:34 - user tried to withdraw negative balance
+2019-12-18 00:42:47 INFO  MyLogger:73 - User successfully logged in
+2019-12-18 00:43:47 INFO  MyLogger:161 - Balance updated

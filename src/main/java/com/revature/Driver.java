@@ -96,7 +96,7 @@ public class Driver {
 				List<Account> allAccounts = AccountServices.getAccounts(currentUser.getU_id());
 
 				for(int j = 0; j < allAccounts.size(); j++) {
-					System.out.println(j+1 +". "+allAccounts.get(j).getA_id());
+					System.out.println(j+1 +". "+allAccounts.get(j).toString());
 				}
 				
 				int selectedInx = scan.nextInt();
@@ -166,7 +166,43 @@ public class Driver {
 				break;
 			}
 			case 4: {
-	
+				System.out.println("Select the account you want to send money to");
+				List<Account> allAccounts = AccountServices.getAccounts(currentUser.getU_id());
+
+				for(int j = 0; j < allAccounts.size(); j++) {
+					if(allAccounts.get(j).getA_id() != a.getA_id()) {
+						System.out.println(j+1 +". "+allAccounts.get(j).toString());
+					} else {
+						System.out.println(j+1 +". "+allAccounts.get(j).toString() + " - Currently Selected");
+					}
+				}
+				
+				int selectedInx = scan.nextInt();
+				scan.nextLine();
+
+				if(selectedInx < 1 || selectedInx > allAccounts.size()) {
+					System.out.println("Invalid input");
+					accountMenu(a);
+				} else {
+					Account chosenAccount = allAccounts.get(selectedInx - 1);
+					
+					System.out.println("how much would you like to transfer?");
+					double amount = scan.nextDouble();
+					scan.nextLine();
+					
+					if(AccountServices.transfer(a, chosenAccount.getA_id() , amount)) {
+						a = AccountServices.getAccount(a.getA_id());
+						chosenAccount = AccountServices.getAccount(chosenAccount.getA_id());
+						System.out.println("transfer approved");
+						System.out.println(a.toString());
+						System.out.println(chosenAccount.toString());
+						accountMenu(a);
+					} else {
+						System.out.println("amount too high");
+						accountMenu(a);
+					}
+				}
+				
 				break;
 			}
 			case 5: {

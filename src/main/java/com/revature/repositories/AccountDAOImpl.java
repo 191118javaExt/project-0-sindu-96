@@ -174,4 +174,26 @@ public class AccountDAOImpl implements AccountDAO {
 		}
 	}
 
+	@Override
+	public boolean transfer(int a_id, int a_id2, double amount) {
+		try (Connection conn = ConnectionUtil.getConnection()) {
+
+			String sql = "CALL transfer(?, ?, ?)";
+			
+			CallableStatement stmt = conn.prepareCall(sql);
+			
+			stmt.setDouble(1, amount);
+			stmt.setInt(2, a_id);
+			stmt.setInt(3, a_id2);
+			
+			stmt.execute();
+			return true;
+			
+		} catch(SQLException ex) {
+			MyLogger.logger.warn("Unable to transfer", ex);
+			System.out.println(ex);
+			return false;
+		}
+	}
+
 }

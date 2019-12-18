@@ -41,4 +41,13 @@ public static AccountDAOImpl ad = new AccountDAOImpl();
 	public static boolean deposit(int a_id, double amount) {
 		return ad.deposit(a_id, amount);
 	}
+	
+	public static boolean transfer(Account a, int a_id2,  double amount) {
+		if (a.getBalance() - amount < 0) {
+			MyLogger.logger.warn("user tried to transfer negative balance");
+			return false;
+		} else {
+			return ad.transfer(a.getA_id(), a_id2, amount);
+		}
+	}
 }
