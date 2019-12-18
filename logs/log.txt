@@ -1,0 +1,32 @@
+2019-12-15 19:04:11 WARN  ConnectionUtil:23 - Unable to obtain connection to database
+java.sql.SQLException: No suitable driver found for jdbc:postgresql://localhost:5432
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at com.revature.util.ConnectionUtil.getConnection(ConnectionUtil.java:21)
+	at com.revature.repositories.UserDAOImpl.addUser(UserDAOImpl.java:46)
+	at com.revature.services.UserServices.addUser(UserServices.java:26)
+	at com.revature.Driver.register(Driver.java:52)
+	at com.revature.Driver.mainMenu(Driver.java:23)
+	at com.revature.Driver.main(Driver.java:12)
+2019-12-15 19:06:24 WARN  ConnectionUtil:23 - Unable to obtain connection to database
+java.sql.SQLException: No suitable driver found for jdbc:postgresql://localhost:5432/postgres
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at com.revature.util.ConnectionUtil.getConnection(ConnectionUtil.java:21)
+	at com.revature.repositories.UserDAOImpl.addUser(UserDAOImpl.java:46)
+	at com.revature.services.UserServices.addUser(UserServices.java:26)
+	at com.revature.Driver.register(Driver.java:52)
+	at com.revature.Driver.mainMenu(Driver.java:23)
+	at com.revature.Driver.main(Driver.java:12)
+2019-12-17 22:40:53 WARN  MyLogger:34 - user tried to withdraw negative balance
+2019-12-17 22:41:15 INFO  MyLogger:73 - User successfully logged in
+2019-12-17 22:42:16 INFO  MyLogger:161 - Balance updated
+2019-12-17 22:42:29 WARN  MyLogger:34 - user tried to withdraw negative balance
+2019-12-17 22:48:26 INFO  MyLogger:73 - User successfully logged in
+2019-12-17 22:53:26 INFO  MyLogger:56 - user successfully registered
+2019-12-17 22:53:47 INFO  MyLogger:73 - User successfully logged in
+2019-12-17 22:54:04 INFO  MyLogger:88 - account created for user tommycash
+2019-12-17 22:55:57 WARN  MyLogger:34 - user tried to withdraw negative balance
+2019-12-17 22:56:16 INFO  MyLogger:161 - Balance updated
+2019-12-17 22:57:10 INFO  MyLogger:143 - Balance updated
+2019-12-17 22:59:15 WARN  MyLogger:34 - user tried to withdraw negative balance
